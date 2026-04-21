@@ -20,12 +20,12 @@
   <div class="lang-switch"><a href="privacy-policy-en.html">English</a></div>
 
   <h1>OffLink プライバシーポリシー</h1>
-  <p class="updated">最終更新日: 2026年4月6日</p>
+  <p class="updated">最終更新日: 2026年4月21日</p>
 
   <p>H Labs Works（以下「当方」）は、モバイルアプリケーション「OffLink」（以下「本アプリ」）におけるユーザーの個人情報の取り扱いについて、以下の通り定めます。</p>
 
   <h2>1. アプリの概要</h2>
-  <p>OffLink は、インターネット接続を必要とせずに、Wi-Fi ホットスポットと WebRTC を利用してグループ音声通話を行うアプリケーションです。通話データはデバイス間でローカルに送受信され、外部サーバーには送信されません。</p>
+  <p>OffLink は、インターネット接続を必要とせずに、Wi-Fi ホットスポットと WebRTC を利用してグループ音声通話を行うアプリケーションです。通話音声はデバイス間でローカルに送受信されます。なお、プッシュ通知機能のために Firebase（Google）を利用しており、一部の情報（§2.2 参照）が Google のサーバーに送信されます。</p>
 
   <h2>2. 収集する情報</h2>
 
@@ -49,10 +49,18 @@
     <li>詳細: <a href="https://policies.google.com/privacy">Google プライバシーポリシー</a></li>
   </ul>
 
-  <h4>Firebase（将来導入予定）</h4>
+  <h4>Firebase（匿名認証・プッシュ通知）</h4>
   <ul>
-    <li>匿名認証およびアプリ利用データの収集を目的として、Firebase Authentication および Cloud Firestore の導入を予定しています。</li>
-    <li>導入時に本ポリシーを更新します。</li>
+    <li>本アプリはプッシュ通知（スタンバイ通知）のために Firebase を利用しています。</li>
+    <li>以下の情報が Google の Firebase サービスに送信・保存されます：
+      <ul>
+        <li><strong>匿名ユーザー ID</strong>: Firebase Anonymous Authentication により自動生成。ユーザーを直接識別しません。</li>
+        <li><strong>デバイストークン（FCM トークン）</strong>: Firebase Cloud Messaging によるプッシュ通知の送受信に使用。</li>
+        <li><strong>グループメンバー情報</strong>: 表示名・参加日時・プラットフォーム種別。グループ内スタンバイ通知の送信に使用。</li>
+      </ul>
+    </li>
+    <li>これらのデータは Google の日本リージョン（asia-northeast1）のサーバーに保存されます。</li>
+    <li>詳細: <a href="https://firebase.google.com/support/privacy">Firebase プライバシーとセキュリティ</a></li>
   </ul>
 
   <h2>3. 位置情報について</h2>
@@ -67,7 +75,8 @@
   <h2>6. データの第三者提供</h2>
   <p>当方は、以下の場合を除き、ユーザーの個人情報を第三者に提供しません。</p>
   <ul>
-    <li>広告配信のため、Google AdMob に対して前項 2.2 に記載の情報が自動的に送信されます。</li>
+    <li>広告配信のため、Google AdMob に対して §2.2 に記載の情報が自動的に送信されます。</li>
+    <li>プッシュ通知のため、Google Firebase に対して §2.2 に記載の情報が自動的に送信されます。</li>
     <li>法令に基づく場合。</li>
     <li>ユーザーの同意がある場合。</li>
   </ul>
@@ -83,7 +92,8 @@
   <ul>
     <li>本アプリが直接保存するデータ（ユーザー名・グループ情報・ポイント）はすべて端末内に保存されます。</li>
     <li>アプリをアンインストールすることで、すべてのローカルデータが削除されます。</li>
-    <li>Google AdMob が収集したデータの削除については、Google のプライバシーポリシーに従います。</li>
+    <li>Firebase に保存されたデータ（匿名 ID・FCM トークン・グループメンバー情報）は Google のサーバー上に保存されており、アプリのアンインストールでは自動削除されません。削除を希望する場合は hlabsworks@gmail.com までご連絡ください。</li>
+    <li>Google AdMob および Firebase が収集したデータの詳細については、<a href="https://policies.google.com/privacy">Google プライバシーポリシー</a>および <a href="https://firebase.google.com/support/privacy">Firebase プライバシーとセキュリティ</a>をご参照ください。</li>
   </ul>
 
   <h2>9. 児童のプライバシー</h2>
